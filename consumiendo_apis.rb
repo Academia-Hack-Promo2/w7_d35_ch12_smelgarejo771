@@ -25,7 +25,7 @@ class Reddit
     		puts "#{notice["data"]["title"]}"
     		puts "#{notice["data"]["author"]}"
     		puts "#{notice["data"]["url"]}"
-    		puts "#{notice["data"]["created_utc"]}"
+    		puts "#{notice["data"]["created"]}"
     		puts "=================R"
 		end
 	end	
