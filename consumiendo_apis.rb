@@ -47,7 +47,7 @@ class Mashable
     	  title =  "#{notice["title"]}"
     	  author =  "#{notice["author"]}"
     	  link =  "#{notice["link"]}"
-    	  date =  Time.at(("#{notice["post_date"]}")
+    	  date =  "#{notice["post_date_rfc"]}"
         type = "Mashable"
     	  notice = Notice.new(title, author, link, date, type)
     	  not_mas.push(notice)
@@ -86,8 +86,8 @@ class Digg
 		not_digg = []
  		news = HTTParty.get("https://digg.com/api/news/popular.json")
     	news["data"]["feed"].each do |notice|
-   		  title =  "#{notice["content"]["title_alt"]}"
-   		  author =  "#{notice["content"]["author"]}"
+   		  title = "#{notice["content"]["title_alt"]}"
+   		  author = "#{notice["content"]["author"]}"
    		  link =  "#{notice["content"]["url"]}"
    		  date = Time.at(("#{notice["date_published"]}").to_i)
         type = "Digg"
